@@ -21,6 +21,6 @@ services:
       - "./.volumes/jupyter-notebook:/home/jovyan/work"
     command:
       - start-notebook.sh
-      - --notebook-dir='/home/jovyan/works'
+      - --notebook-dir='/home/jovyan/work'
     ports:
       - "31733:8888"
