@@ -1,0 +1,9 @@
+.git/
+**/.DS_Store
+.gitignore
+.dockerignore
+.circleci/
+.volumes/
+docker-compose.yml
+Dockerfile
+VERSION

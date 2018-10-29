@@ -1,0 +1,26 @@
+version: "2.4"
+
+x-service: &default-service
+  restart: always
+  logging:
+    driver: "json-file"
+    options:
+      max-size: "150m"
+      max-file: "6"
+
+services:
+  notebook:
+    <<: *default-service
+    container_name: jupyter-notebook
+    image: floydev/jupyter-notebook:610bb8b938db
+    user: root
+    environment:
+      JUPYTER_ENABLE_LAB: "yes"
+      GRANT_SUDO: "yes"
+    volumes:
+      - "./.volumes/jupyter-notebook:/home/jovyan/work"
+    command:
+      - start-notebook.sh
+      - --notebook-dir='/home/jovyan/works'
+    ports:
+      - "31733:8888"
