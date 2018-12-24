@@ -8,7 +8,7 @@ RUN unset SUDO_GID && \
     unset SUDO_UID
 
 RUN conda install --quiet --yes -c pytorch \
-    'pytorch=0.4.1' \
+    'pytorch=1.0.0' \
     'torchvision=0.2.1' && \
     conda clean -tipsy && \
     fix-permissions $CONDA_DIR && \
