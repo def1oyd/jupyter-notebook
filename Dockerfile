@@ -18,7 +18,7 @@ RUN conda install --quiet --yes \
     'pip' \
     'requests' \
     'psycopg2' \
-    'plotly=3.4.1' \
+    'plotly=3.4.2' \
     'boto3' \
     'black' \
     'nbconvert' && \
