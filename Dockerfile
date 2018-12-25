@@ -28,6 +28,7 @@ RUN conda install --quiet --yes \
 RUN pip install --no-cache-dir \
     'git+https://github.com/bjornaa/py2nb.git' \
     'schedule' \
-    'blackcellmagic' && \
+    'blackcellmagic' \
+    'loguru' && \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
