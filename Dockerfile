@@ -32,3 +32,6 @@ RUN pip install --no-cache-dir \
     'loguru' && \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
+
+RUN jupyter labextension install \
+    jupyterlab_formatblack
