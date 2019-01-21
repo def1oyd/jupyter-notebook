@@ -33,5 +33,11 @@ RUN pip install --no-cache-dir \
     fix-permissions $CONDA_DIR && \
     fix-permissions /home/$NB_USER
 
-RUN jupyter labextension install \
-    jupyterlab_formatblack
+RUN git clone https://github.com/tobinjones/jupyterlab_formatblack && \
+    cd jupyterlab_formatblack && \
+    sed -i 's~"@jupyterlab/application": "^0.16.0"~"@jupyterlab/application": "0"~g' package.json && \
+    sed -i 's~"@jupyterlab/cells": "^0.16.3"~"@jupyterlab/cells": "0"~g' package.json && \
+    sed -i 's~"@jupyterlab/notebook": "^0.16.3"~"@jupyterlab/notebook": "0"~g' package.json && \
+    npm install && \
+    npm run build && \
+    jupyter labextension link .
