@@ -38,6 +38,7 @@ RUN git clone https://github.com/tobinjones/jupyterlab_formatblack && \
     sed -i 's~"@jupyterlab/application": "^0.16.0"~"@jupyterlab/application": "0"~g' package.json && \
     sed -i 's~"@jupyterlab/cells": "^0.16.3"~"@jupyterlab/cells": "0"~g' package.json && \
     sed -i 's~"@jupyterlab/notebook": "^0.16.3"~"@jupyterlab/notebook": "0"~g' package.json && \
+    sed -i 's~        const { context, notebook } = current;~        current.notebook = current.content;\n        const { context, notebook } = current;~g' src/index.ts && \
     npm install && \
     npm run build && \
     jupyter labextension link .
