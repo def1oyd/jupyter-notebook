@@ -12,7 +12,7 @@ services:
   notebook:
     <<: *default-service
     container_name: jupyter-notebook
-    image: floydev/jupyter-notebook:87210526f381
+    image: floydev/jupyter-notebook:65761486d5d3
     user: root
     environment:
       JUPYTER_ENABLE_LAB: "yes"
